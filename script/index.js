@@ -42,6 +42,8 @@ let stringExample = 'ciao' // stringhe
 let numberExample = 145 // numeri
 let booleanExample = true // booleano, un valore true/false
 // un valore booleano serve a dichiarare la veridicità/falsità di un'espressione
+let nonsisa // undefined, non ha mai avuto un'assegnazione
+let completelyEmpty = null // null, il valore è un assegnazione esplicita DEL NIENTE
 
 let sum = 40 + 10 // sum è la somma di 40 e 10
 console.log('il valore di sum è', sum) // 50
@@ -99,3 +101,82 @@ myAge = 66
 
 console.log(betterPerson) // come prima! perchè betterPerson non è stata riassegnata
 // anche person sarebbe rimasto uguale
+
+// JS È UN LINGUAGGIO A TIPIZZAZIONE DINAMICA (debole)
+let number = 20
+// number = 'ciao' // abbiamo cambiato il TIPO del dato :( non imparatelo!
+// number = '20' // potenzialmente problematico!!
+
+// ma questi tipi dei dati, come li recuperiamo?
+console.log(myName) // 'Aldo'
+console.log(typeof myName) // 'string'
+console.log(typeof myAge) // 'number'
+
+// tipi dei dati primitivi sono:
+// stringhe -> concatenazione di caratteri
+// numeri -> valori numeri interi, decimali, etc.
+// booleani -> veridicità: true/false
+// undefined -> il valore di una variabile definita ma senza assegnazione
+// null -> null è un valore, rappresenta l'ESPLICITA ASSENZA di un valore
+
+let boh
+console.log('valore di boh', boh)
+
+let empty = null
+console.log('valore di empty', empty)
+
+// ULTERIORE MODO DI CREARE UNA VARIABILE: la keyword CONST
+const URL = 'www.epicode.com'
+// url = 'ciao' // ERRORE! stai cercando di ri-assegnare il valore ad una costante!
+// le costanti si usano per creare delle assegnazioni in memoria NON-RIASSEGNABILI!
+// il valore INIZIALE sarà il valore che assumerà fino alla fine dell'esecuzione
+// provando a ri-assegnare il valore ad una costante otterrete un errore!
+
+// OPERATORI LOGICI
+// <, >, <=, >=, ===, !==, !
+
+console.log('5 minore di 10', 5 < 10) // -> true
+console.log('15 maggiore di 32', 15 > 32) // -> false
+
+const boolean1 = 6 < 8 // true
+const boolean2 = 80 > 81 // false
+console.log('boolean1', boolean1) // true
+console.log('boolean2', boolean2) // false
+
+const boolean3 = 8 <= 8 // true
+const boolean4 = 6 >= 8 // false
+
+// == -> verifica il VALORE ma NON IL TIPO
+5 == '5' // true
+// === -> verifica IL VALORE MA ANCHE IL TIPO
+5 === '5' // false
+
+const boolean5 = 'stefano' === 'stefano' // true, COMPARAZIONE
+const boolean6 = 101 === 101 // true
+const boolean7 = 101 === 300 // false
+const boolean8 = 'stefano' === 'STEFANO' // false -> uguaglianza
+const boolean9 = 'stefano' !== 'STEFANO' // true -> disuguaglianza
+const boolean10 = !(6 < 8) // false, INVERTE il significato di 6 < 8
+console.log('boolean10', boolean10)
+
+// è possibile anche CONCATENARE diversi valori booleani, diversi risultati di espressioni
+// AND OR
+
+const anotherBoolean1 = 5 < 10 // true
+const anotherBoolean2 = 10 < 5 // false
+
+// AND &&
+const result1 = anotherBoolean1 && anotherBoolean2 // false
+// TABELLINA DELL'AND
+// false && false -> false
+// false && true -> false
+// true && false -> false
+// true && true -> true
+
+// OR ||
+const result2 = anotherBoolean1 || anotherBoolean2 // true
+// TABELLINA DELL'OR
+// false || false -> false
+// false || true -> true
+// true || false -> true
+// true || true -> true
